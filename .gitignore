@@ -259,3 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/ChatRoom/Properties/PublishProfiles/ChatRoom20190902112033 - Web Deploy.pubxml

@@ -2,9 +2,7 @@
     background-color:black;
 
 }
-#chatPage{
-    
-}
+
 .login-input {
     background: black;
     border: 1px solid #F2D68C;
@@ -32,8 +30,9 @@
     height: 32px;
 }
 
-.message-page{
-    height:500px;
+.message-page {
+    height: 500px;
+    overflow: auto;
 }
 .message-box {
     display: inline;
