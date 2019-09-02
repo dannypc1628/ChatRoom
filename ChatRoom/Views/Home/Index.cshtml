@@ -1,12 +1,30 @@
 ﻿
-<div class="row" id="chatPage">
-    <div class="row" v-if="status==0">
-        <input type="text" v-model="name" placeholder="輸入您的暱稱" />
-        <input type="button" v-on:click="login" value="讓我們暢所欲言" />
+<div class="row justify-content-center" id="chatPage">
+    <div class="row w-100 justify-content-center" v-if="status==0">
+        <div class="col-8 mb-3 mt-3">
+            <div class="row justify-content-center">
+                <div class="login-img "></div>
+            </div>
+        </div>
+        <div class="col-6 mb-3 mt-3 ">
+            <div class="row justify-content-center">
+                <div class="login-text-img "></div>
+            </div>
+            
+        </div>
+        <div class="col-8 login-text mb-3 mt-3 text-center">
+            無論你的風格是皮革或蕾絲，<br>還是羽毛或著石膏 <br>- 我們歡迎所有面具的到來。
+        </div>
+        <div class="col-8 mb-3 mt-3">
+            <input type="text" v-model="name" placeholder="輸入您的暱稱" class="login-input text-center w-100" />
+        </div>
+        <div class="col-8 mt-4">
+            <div v-on:click="login" class="login-button text-center">讓我們暢所欲言</div>
+        </div>
     </div>
 
-    <div class="row" v-if="status==1">
-        <div class="col-6">
+    <div class="row justify-content-center align-content-end" v-if="status==1">
+        @*<div class="col-6">
             <div class="mr-auto">
                 <input type="text" v-model="groupName" />
             </div>
@@ -22,26 +40,32 @@
             <div>
                 <input type="button" v-on:click="createRoom" value="建立新聊天室" />
             </div>
+        </div>*@
+
+
+        <div class="col-12 message-page text-color">
+            <div v-for="item in messageList">
+                <div class="m-2">{{item.user}}</div>
+                
+                <div class="message-box">
+                    {{item.message}}
+                </div>
+                <span>{{item.time}}</span>
+            </div>
         </div>
 
-        <div class="col-12">
-            {{name}} 您好！！！
-            <br />
-            Message...<input type="text" v-model="message" />
+        <div class="col-12 text-color">
+            {{name}} 您好！！！<input type="text" v-model="message" />
             <input type="button" v-on:click="send" value="送出" />
         </div>
 
 
-        <div class="col-12">
-            <div v-for="item in messageList">
-                <p>{{item.user}} ： {{item.message}}</p>
-            </div>
-        </div>
+
     </div>
 
-    <div class="row" v-if="status==2">
+    @*<div class="row" v-if="status==2">
        
-        <div class="col-12">
+        <div class="col-12 text-color">
             {{name}} 您好！！！
             <br />
             Message...<input type="text" v-model="message" />
@@ -54,7 +78,7 @@
                 <p>{{item.user}} ： {{item.message}}</p>
             </div>
         </div>
-    </div>
+    </div>*@
 
 </div>
 <script src="~/lib/signalr/dist/browser/signalr.js"></script>

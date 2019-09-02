@@ -10,11 +10,11 @@ namespace ChatRoom.Hubs
     {
         public async Task SendMessage(string user, string message)
         {
-            await Clients.All.SendAsync("收到訊息", user,message);
+            await Clients.All.SendAsync("收到訊息", user,message, DateTime.Now);
         }
         public async Task Login(string user)
         {
-            await Clients.All.SendAsync("進入大廳事件", "系統通知", user+" 進入聊天室大廳");
+            await Clients.All.SendAsync("進入大廳事件", "系統通知", user+" 進入聊天室大廳", DateTime.Now);
         }
 
 

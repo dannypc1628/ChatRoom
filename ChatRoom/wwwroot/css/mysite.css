@@ -1,3 +1,47 @@
 ﻿body {
     background-color:black;
+
+}
+#chatPage{
+    
+}
+.login-input {
+    background: black;
+    border: 1px solid #F2D68C;
+    border-radius: 5px;
+    padding: 15px;
+    color: #F2D68C;
+}
+.login-button {
+    background: #F2D68C;
+    border-radius: 5px;
+    padding: 15px;
+}
+.login-text {
+    color: #F2D68C;
+}
+.login-img {
+    background: url('../img/Group22.png');
+    width: 705px;
+    height: 325px;
+    left:-65px;
+}
+.login-text-img {
+    background: url('../img/Group28.png');
+    width: 252px;
+    height: 32px;
+}
+
+.message-page{
+    height:500px;
+}
+.message-box {
+    display: inline;
+    border: 1px solid #F2D68C;
+    border-radius: 0px 5px 5px 5px;
+    padding:3px;
+    margin:3px;
+}
+.text-color {
+    color: #F2D68C;
 }
