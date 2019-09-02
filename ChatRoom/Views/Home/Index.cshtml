@@ -1,0 +1,62 @@
+﻿
+<div class="row" id="chatPage">
+    <div class="row" v-if="status==0">
+        <input type="text" v-model="name" placeholder="輸入您的暱稱" />
+        <input type="button" v-on:click="login" value="讓我們暢所欲言" />
+    </div>
+
+    <div class="row" v-if="status==1">
+        <div class="col-6">
+            <div class="mr-auto">
+                <input type="text" v-model="groupName" />
+            </div>
+            <div>
+                <input type="button" v-on:click="goRoom" value="加入聊天室" />
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="mr-auto">
+                &nbsp;
+            </div>
+            <div>
+                <input type="button" v-on:click="createRoom" value="建立新聊天室" />
+            </div>
+        </div>
+
+        <div class="col-12">
+            {{name}} 您好！！！
+            <br />
+            Message...<input type="text" v-model="message" />
+            <input type="button" v-on:click="send" value="送出" />
+        </div>
+
+
+        <div class="col-12">
+            <div v-for="item in messageList">
+                <p>{{item.user}} ： {{item.message}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" v-if="status==2">
+       
+        <div class="col-12">
+            {{name}} 您好！！！
+            <br />
+            Message...<input type="text" v-model="message" />
+            <input type="button" v-on:click="send" value="送出" />
+        </div>
+
+
+        <div class="col-12">
+            <div v-for="item in groupMessageList">
+                <p>{{item.user}} ： {{item.message}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/vue/vue.js"></script>
+<script src="~/js/chat.js"></script>
