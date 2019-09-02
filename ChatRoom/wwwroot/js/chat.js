@@ -14,7 +14,9 @@ var app = new Vue({
     methods: {
         login: function () {
             console.log("按下login");
-            
+            if (this.name.length == 0)
+                return;
+
             connection
                 .invoke("Login", this.name)
                 .then(() => {
@@ -30,6 +32,8 @@ var app = new Vue({
         send: function () {
             
             console.log("按下送出訊息");
+            if (this.message.length == 0 )
+                return;
             connection
                 .invoke("SendMessage", this.name, this.message)
                 .then(() => {

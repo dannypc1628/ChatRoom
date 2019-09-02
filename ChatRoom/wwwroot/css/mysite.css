@@ -29,7 +29,20 @@
     width: 252px;
     height: 32px;
 }
-
+.message-input {
+    margin: 5px;
+    border: 1px solid #F2D68C;
+    border-radius: 5px;
+    padding: 5px;
+    background: black;
+    color: #F2D68C;
+}
+.message-send-button {
+    background: #F2D68C;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
 .message-page {
     height: 500px;
     overflow: auto;

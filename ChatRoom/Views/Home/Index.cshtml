@@ -54,9 +54,26 @@
             </div>
         </div>
 
-        <div class="col-12 text-color">
-            {{name}} 您好！！！<input type="text" v-model="message" />
-            <input type="button" v-on:click="send" value="送出" />
+        <div class="col-12 text-break  m-4">
+            <div class="row ">
+                <div class="col-2 row m-2 justify-content-center">
+                    <div class="align-self-center text-color text-center">
+                        {{name}} 您好！！！
+                    </div>
+                </div>
+                <div class="col-7 row">
+                    <div class="align-self-center text-color w-100">
+                        <input type="text" v-model="message" class="message-input w-100" />
+                    </div>
+                </div>
+                @*<input type="button" v-on:click="send" value="送出" />*@
+                <div class="col-2 row ml-2">
+                    <div class="align-self-center w-100">
+                        <div v-on:click="send" class="message-send-button text-center w-100">送出</div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
 
 
